@@ -29,7 +29,7 @@ import {
     ParticleComponent,
 } from '../../lib/export/components';
 
-import { CanvasRenderer } from '../../lib/export/renderers';
+import { CanvasRenderer, SVGRenderer } from '../../lib/export/renderers';
 
 // 注册必须的组件
 echarts.use([
@@ -45,6 +45,7 @@ echarts.use([
     LegendComponent,
     ToolboxComponent,
     DataZoomComponent,
+    SVGRenderer,
     // DataZoomInsideComponent,
     // ParticleComponent,
 ]);
@@ -61,11 +62,9 @@ export default defineComponent({
             'drak',
             null
         );
-        var pieChart = echarts.init(
-            document.getElementById('right'),
-            'drak',
-            null
-        );
+        var pieChart = echarts.init(document.getElementById('right'), null, {
+            renderer: 'canvas',
+        });
 
         barChart.setOption(bar3dOption);
         // barChart.setOption(barOption);

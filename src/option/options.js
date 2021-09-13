@@ -219,12 +219,13 @@ const bar3dOption = {
             "debarwidthtype": "auto",
             "name": "Type1",
             "type": "bar3d",
-            "barType": "cube",
+            "barType": "cylinder",
+            // "barType": "cube",
             "barGap": "30%",
             "barCategoryGap": "30",
             "indexAxis": "1",
-            "barWidth": 30,
-            "barLength": 30,
+            // "barWidth": 30,
+            // "barLength": 30,
             "itemStyle": {
                 "normal": {
                     "lineStyle": {
@@ -234,11 +235,12 @@ const bar3dOption = {
                     "borderColor": "auto",
                     "borderWidth": 0,
                     "borderType": "solid",
-                    "barBorderRadius": 0
+                    "barBorderRadius": 0,
+                    // opacity: 0.5
                 }
             },
             "label": {
-                "show": false,
+                "show": true,
                 // "position": "top",
                 //top / left / right / bottom / inside / insideLeft / insideRight / insideTop / insideBottom / insideTopLeft / insideBottomLeft / insideTopRight / insideBottomRight
                 "positionShpt": 0,
@@ -250,7 +252,7 @@ const bar3dOption = {
             },
             "particleStyle": "style_1",
             "particle": {
-                "show": true,
+                "show": false,
                 // "time": 5,
                 "time": [1, 40],
                 "minTime": 4,
@@ -950,35 +952,54 @@ const barOption = {
 };
 
 const pieOption = {
-    title: {
-        text: '某站点用户访问来源',
-        subtext: '纯属虚构',
-        left: 'center',
-    },
     tooltip: {
         trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)'
+    },
+    legend: {
+        show: false,
+        data: ['直达', '营销广告', '搜索引擎', '邮件营销', '联盟广告', '视频广告', '百度', '谷歌', '必应', '其他']
     },
     series: [
         {
             name: '访问来源',
             type: 'pie',
-            radius: '50%',
-            data: [
-                { value: 1048, name: '搜索引擎' },
-                { value: 735, name: '直接访问' },
-                { value: 580, name: '邮件营销' },
-                { value: 484, name: '联盟广告' },
-                { value: 300, name: '视频广告' },
-            ],
-            emphasis: {
-                itemStyle: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)',
-                },
+            selectedMode: 'single',
+            radius: ['35%', '55%'],
+            label: {
+                position: 'inner',
+                fontSize: 14,
             },
+            labelLine: {
+                show: false
+            },
+            data: [
+                { value: 50, name: '搜索引擎' },
+                { value: 50, name: '直达1' },
+                { value: 13, name: '直达2' },
+                { value: 50, name: '直达3' },
+                // { value: 679, name: '营销广告' }
+            ]
         },
-    ],
+        {
+            name: '访问来源',
+            type: 'pie',
+            selectedMode: 'single',
+            radius: ['60%', '80%'],
+            label: {
+                position: 'inner',
+                fontSize: 14,
+            },
+            labelLine: {
+                show: false
+            },
+            data: [
+                { value: 50, name: '搜索引擎' },
+                { value: 50, name: '直达' },
+                // { value: 679, name: '营销广告' }
+            ]
+        },
+    ]
 };
 
 export {
