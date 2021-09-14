@@ -47,7 +47,7 @@ echarts.use([
     DataZoomComponent,
     SVGRenderer,
     // DataZoomInsideComponent,
-    // ParticleComponent,
+    ParticleComponent,
 ]);
 
 import { bar3dOption, barOption, pieOption } from '../option/options';

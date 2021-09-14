@@ -1,6 +1,7 @@
 import * as echarts from '../../lib/export/core';
 
 import particImg from '../assets/l1.03e5.png'
+import lightcImg from '../assets/p1bu_25d.0d1d.png'
 
 const bar3dOption = {
     "animation": true,
@@ -119,8 +120,8 @@ const bar3dOption = {
     }, {}],
     "xAxis": [{
         "type": "category",
-        // "data": ["1月"],
-        "data": ["1月", "2月", "3月", "4月", "5月"],
+        "data": ["1月", '2月'],
+        // "data": ["1月", "2月", "3月", "4月", "5月"],
         "name": "",
         "nameTextStyle": {
             "color": "#bcd3eb",
@@ -219,13 +220,13 @@ const bar3dOption = {
             "debarwidthtype": "auto",
             "name": "Type1",
             "type": "bar3d",
-            "barType": "cylinder",
-            // "barType": "cube",
+            // "barType": "cylinder",
+            "barType": "cube",
             "barGap": "30%",
             "barCategoryGap": "30",
             "indexAxis": "1",
-            // "barWidth": 30,
-            // "barLength": 30,
+            "barWidth": 60,
+            "barLength": 60,
             "itemStyle": {
                 "normal": {
                     "lineStyle": {
@@ -241,13 +242,13 @@ const bar3dOption = {
             },
             "label": {
                 "show": true,
-                // "position": "top",
+                "position": "insideTop",
                 //top / left / right / bottom / inside / insideLeft / insideRight / insideTop / insideBottom / insideTopLeft / insideBottomLeft / insideTopRight / insideBottomRight
                 "positionShpt": 0,
                 "textStyle": {
-                    "color": "#fff",
+                    "color": "purple",
                     "fontSize": 20,
-                    "fontWeight": "normal"
+                    "fontWeight": "bold"
                 }
             },
             "particleStyle": "style_1",
@@ -265,12 +266,12 @@ const bar3dOption = {
             },
             "lightStyle": "style_1",
             "light": {
-                "show": true,
-                "time": 5,
+                "show": false,
+                "time": [1, 40],
                 "minTime": 4,
                 "maxTime": 6,
                 "color": "#ffffff",
-                "imgPath": ["/analystui/static/images/p1bu_25d.0d1d.png", "/analystui/static/images/p1bd_25d.5042.png"],
+                "imgPath": lightcImg,
                 "imgWidth": 55,
                 "imgHeight": 360,
                 "animeType": "up",
@@ -279,6 +280,7 @@ const bar3dOption = {
             "background": {
                 "show": true,
                 "itemStyle": {
+                    // color: 'red',
                     "color": {
                         "x": 0,
                         "y": 0,
@@ -288,10 +290,10 @@ const bar3dOption = {
                         "global": false,
                         "colorStops": [{
                             "offset": 0,
-                            "color": "rgba(255,255,255,0.4)"
+                            "color": "rgba(255, 1, 0, 0.5)"
                         }, {
                             "offset": 1,
-                            "color": "rgba(255,255,255,0.4)"
+                            "color": "rgba(255, 1, 0, 0.5)"
                         }]
                     },
                     "borderColor": "#ffffff",
@@ -299,8 +301,8 @@ const bar3dOption = {
                     "borderType": "solid"
                 }
             },
-            // "data": [23.2],
-            "data": [23.2, 25.6, 76.7, 135.6, 162.2],
+            "data": [-23.2, 23.2],
+            // "data": [23.2, 25.6, 76.7, 135.6, 162.2],
             "yAxisIndex": 0,
             "clickable": true,
             "markPointStatus": true,
@@ -485,6 +487,7 @@ const bar3dOption = {
         "colorStops": [{
             "offset": 0,
             "color": "#1473dc"
+            // "color": "rgba()"
         }, {
             "offset": 1,
             "color": "#84bff5"
