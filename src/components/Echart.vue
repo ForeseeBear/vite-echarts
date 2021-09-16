@@ -16,6 +16,7 @@ import {
     LineChart,
     PieChart,
     FunnelChart,
+    Funnel3dChart,
 } from '../../lib/export/charts';
 
 import {
@@ -41,6 +42,7 @@ echarts.use([
     LineChart,
     PieChart,
     FunnelChart,
+    Funnel3dChart,
     CanvasRenderer,
     LegendComponent,
     ToolboxComponent,
@@ -50,7 +52,13 @@ echarts.use([
     ParticleComponent,
 ]);
 
-import { bar3dOption, barOption, pieOption } from '../option/options';
+import {
+    bar3dOption,
+    funnel3d,
+    funnel,
+    barOption,
+    pieOption,
+} from '../option/options';
 
 export default defineComponent({
     data() {
@@ -66,7 +74,9 @@ export default defineComponent({
             renderer: 'canvas',
         });
 
-        barChart.setOption(bar3dOption);
+        barChart.setOption(funnel3d);
+        // barChart.setOption(funnel);
+        // barChart.setOption(bar3dOption);
         // barChart.setOption(barOption);
         // pieChart.setOption(pieOption);
 
@@ -85,6 +95,6 @@ export default defineComponent({
 #left,
 #right {
     width: 800px;
-    height: 400px;
+    height: 500px;
 }
 </style>
