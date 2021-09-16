@@ -8,8 +8,7 @@
   },
   "dependencies": {
     "echarts": "^5.2.0",
-    "vue": "^3.2.6",
-    "zrender": "^5.2.0"
+    "vue": "^3.2.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",
